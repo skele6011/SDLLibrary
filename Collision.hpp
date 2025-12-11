@@ -1,3 +1,10 @@
+/******************************************************************************
+ * Collision.hpp/cpp v1.0
+ * Simple SDL collision checker. Includes the following:
+    * Custom-made perfect circle to rectangle collisions
+    * Custom-made perfect circle to circle collisions
+ ******************************************************************************/
+
 #pragma once
 #include <SDL2/SDL.h>
 #include <algorithm>

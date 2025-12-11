@@ -1,3 +1,5 @@
+
+
 #include "Collision.hpp"
 
 bool Collision::circleRectCollision(int cx, int cy, int radius, SDL_Rect rect) {
