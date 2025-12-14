@@ -4,7 +4,7 @@ A small SDL-based C++ library for personal projects.
 
 ## Modules
 
-- [x] EventManager – mouse events, quitting (keyboard support in progress)
+- [x] EventManager – mouse events, quitting, keyboard presses and holds
 - [x] Initializer – initializes SDL, `SDL_image`, `SDL_ttf`
 - [x] Texture – loads and draws images and fonts
 - [x] Window – creates window, draws basic shapes, manages frame start/end
