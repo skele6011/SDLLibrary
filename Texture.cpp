@@ -37,7 +37,7 @@ Texture::~Texture() {
 }
 
 void Texture::render(SDL_Renderer* renderer, int x, int y, int w, int h) const {
-    if (!texture_) return; //  Nothing to rnder
+    if (!texture_) return; //  Nothing to render
 
     SDL_Rect dstRect;
     dstRect.x = x;
