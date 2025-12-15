@@ -1,4 +1,4 @@
-# SDLLibrary
+# An SDL Library
 
 A small SDL-based C++ library for personal projects.
 
