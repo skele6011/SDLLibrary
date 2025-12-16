@@ -36,7 +36,7 @@ bool EventManager::pollEvents() {
         }
     }
 
-    // Set mouseButtons to be the ones pressed and give mouseX and mouseY their values\
+    // Set mouseButtons to be the ones pressed and give mouseX and mouseY their values
     // Return true (so program knows we didn't quit)
     this->mouseButtons_ = SDL_GetMouseState(&this->mouseX_, &this->mouseY_); 
     return true;
@@ -74,3 +74,4 @@ void EventManager::clearFrame() {
     this->mouseButtonsPressedThisFrame_.clear();
 }
 // --- end: Manual clearing ---
+
