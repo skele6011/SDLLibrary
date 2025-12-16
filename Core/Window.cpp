@@ -26,7 +26,7 @@ Window::Window(const char* title, int width, int height) {
 // --- end: Constructor ---
 
 // --- First Frame ---
-void Window::beginFrame(Uint8 r = 0, Uint8 g = 0, Uint8 b = 0, Uint8 a = 255) { // Default values as black
+void Window::beginFrame(Uint8 r, Uint8 g , Uint8 b, Uint8 a) { // Default values as black
     SDL_SetRenderDrawColor(this->renderer_, r, g, b, a);
     SDL_RenderClear(this->renderer_); // Fill screen with the color set
 }
