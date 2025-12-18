@@ -8,7 +8,7 @@ Window::Window(const char* title, int width, int height) {
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         width, height,
-        SDL_WINDOW_SHOWN
+        SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE
     );
 
     // Error checking: Window pointer is null
@@ -16,12 +16,16 @@ Window::Window(const char* title, int width, int height) {
         std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
     }
 
+    SDL_SetWindowMinimumSize(this->window_, 1920, 1080);
+
     // Set up renderer struct
     this->renderer_ = SDL_CreateRenderer(this->window_, -1, SDL_RENDERER_ACCELERATED);
     // Error checking: Renderer pointer is null
     if (!this->renderer_) {
         std::cerr << "SDL_CreateRenderer Error: " << SDL_GetError() << std::endl;
     }
+
+
 }
 // --- end: Constructor ---
 

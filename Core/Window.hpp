@@ -1,5 +1,5 @@
 /******************************************************************************
- * Window.hpp/cpp v1.0
+ * Window.hpp/cpp v1.1
  * Simple SDL window and rendering wrapper. Includes the following:
  *   * Window and renderer creation/destruction
  *   * Frame begin/end handling
@@ -44,5 +44,6 @@ public:
 
     // --- Getters ---
     SDL_Renderer* renderer() const { return renderer_; }
+    SDL_Window* window() const { return window_; }
     // --- end: Getters ---
 };

@@ -1,7 +1,10 @@
 #include "EventManager.hpp"
 
 // --- Constructor ---
-EventManager::EventManager(bool mouseEnabled) {
+EventManager::EventManager(SDL_Window* window, bool mouseEnabled) {
+    
+    this->window_ = window;
+    
     // Show or hide cursor depending on mouseEnabled
     this->mouseEnabled_ = mouseEnabled;
     if (!this->mouseEnabled_) {
@@ -9,6 +12,8 @@ EventManager::EventManager(bool mouseEnabled) {
     } else {
         SDL_ShowCursor(SDL_ENABLE);
     }
+
+    SDL_GetWindowSize(window_, &windowWidth_, &windowHeight_);
 }
 // --- end: Constructor ---
 
@@ -33,6 +38,16 @@ bool EventManager::pollEvents() {
             case SDL_MOUSEBUTTONDOWN:
                 this->mouseButtonsPressedThisFrame_.insert(this->event_.button.button);
                 break;
+
+            // If the window is resized or changed
+            case SDL_WINDOWEVENT:
+                if (this->event_.window.event == SDL_WINDOWEVENT_RESIZED ||
+                    this->event_.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
+                    this->windowWidth_ = this->event_.window.data1;
+                    this->windowHeight_ = this->event_.window.data2;
+                }
+                break;
+
         }
     }
 
